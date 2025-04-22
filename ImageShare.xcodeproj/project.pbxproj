@@ -6,7 +6,14 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		39E553061CF133F59F0185C4 /* Pods_ImageShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 905B124EBEF566E7EEF225D3 /* Pods_ImageShare.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		905B124EBEF566E7EEF225D3 /* Pods_ImageShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9A514B114B5AED4C9E616CE /* Pods-ImageShare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageShare.release.xcconfig"; path = "Target Support Files/Pods-ImageShare/Pods-ImageShare.release.xcconfig"; sourceTree = "<group>"; };
+		E0794FA29D47417AEC069D9F /* Pods-ImageShare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageShare.debug.xcconfig"; path = "Target Support Files/Pods-ImageShare/Pods-ImageShare.debug.xcconfig"; sourceTree = "<group>"; };
 		FD88A7F32DA5504300077FB6 /* ImageShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -36,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39E553061CF133F59F0185C4 /* Pods_ImageShare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6BE1E8085B04604A81A7EAA3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E0794FA29D47417AEC069D9F /* Pods-ImageShare.debug.xcconfig */,
+				C9A514B114B5AED4C9E616CE /* Pods-ImageShare.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		754C38490C6C4C63A0F8456C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				905B124EBEF566E7EEF225D3 /* Pods_ImageShare.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FD88A7EA2DA5504300077FB6 = {
 			isa = PBXGroup;
 			children = (
 				FD88A7F52DA5504300077FB6 /* ImageShare */,
 				FD88A7F42DA5504300077FB6 /* Products */,
+				6BE1E8085B04604A81A7EAA3 /* Pods */,
+				754C38490C6C4C63A0F8456C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,9 +92,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FD88A8062DA5504400077FB6 /* Build configuration list for PBXNativeTarget "ImageShare" */;
 			buildPhases = (
+				2DD9EABA0D32C386B7B6FCDF /* [CP] Check Pods Manifest.lock */,
 				FD88A7EF2DA5504300077FB6 /* Sources */,
 				FD88A7F02DA5504300077FB6 /* Frameworks */,
 				FD88A7F12DA5504300077FB6 /* Resources */,
+				26C0D8B598AD08B0FBB3F9CF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -77,8 +106,6 @@
 				FD88A7F52DA5504300077FB6 /* ImageShare */,
 			);
 			name = ImageShare;
-			packageProductDependencies = (
-			);
 			productName = ImageShare;
 			productReference = FD88A7F32DA5504300077FB6 /* ImageShare.app */;
 			productType = "com.apple.product-type.application";
@@ -127,6 +154,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		26C0D8B598AD08B0FBB3F9CF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ImageShare/Pods-ImageShare-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ImageShare/Pods-ImageShare-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ImageShare/Pods-ImageShare-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2DD9EABA0D32C386B7B6FCDF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ImageShare-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FD88A7EF2DA5504300077FB6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -140,6 +209,7 @@
 /* Begin XCBuildConfiguration section */
 		FD88A8072DA5504400077FB6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0794FA29D47417AEC069D9F /* Pods-ImageShare.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -168,6 +238,7 @@
 		};
 		FD88A8082DA5504400077FB6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9A514B114B5AED4C9E616CE /* Pods-ImageShare.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -231,7 +302,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -294,7 +365,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
