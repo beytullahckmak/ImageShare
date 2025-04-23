@@ -94,7 +94,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="folder.badge.plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Kqg-BE-gPa">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bos" translatesAutoresizingMaskIntoConstraints="NO" id="Kqg-BE-gPa">
                                 <rect key="frame" x="66" y="128" width="261" height="171"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="secondaryLabelColor"/>
@@ -174,14 +174,61 @@
                     <view key="view" contentMode="scaleToFill" id="iwn-Ff-L1A">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="K0x-iQ-zD7">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="803"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="287" id="Ksb-l5-eqp" customClass="TableCellTableViewCell" customModule="ImageShare" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="287"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ksb-l5-eqp" id="bau-jK-5LG" customClass="TableCellTableViewCell" customModule="ImageShare" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="287"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRb-j9-QhZ">
+                                                    <rect key="frame" x="20" y="22" width="360" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Yorum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kec-9S-hC9">
+                                                    <rect key="frame" x="20" y="198" width="342" height="51"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PI3-Yg-deg">
+                                                    <rect key="frame" x="20" y="62" width="240" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="TableCellImage" destination="PI3-Yg-deg" id="98x-Ag-HZg"/>
+                                            <outlet property="TextEmail" destination="RRb-j9-QhZ" id="dLl-bR-qDP"/>
+                                            <outlet property="TextYorum" destination="Kec-9S-hC9" id="QiL-WW-GQe"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="389-OG-Ehl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="389-OG-Ehl" firstAttribute="trailing" secondItem="K0x-iQ-zD7" secondAttribute="trailing" id="T0J-3T-6ay"/>
+                            <constraint firstItem="K0x-iQ-zD7" firstAttribute="top" secondItem="389-OG-Ehl" secondAttribute="top" id="ffF-8x-oQS"/>
+                            <constraint firstItem="K0x-iQ-zD7" firstAttribute="leading" secondItem="389-OG-Ehl" secondAttribute="leading" id="iLR-f2-FxC"/>
+                            <constraint firstItem="389-OG-Ehl" firstAttribute="bottom" secondItem="K0x-iQ-zD7" secondAttribute="bottom" id="oN4-Zf-JQl"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" id="rZB-Cr-rhw"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nuM-JH-jwb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3937" y="-311"/>
+            <point key="canvasLocation" x="3936.6412213740455" y="-311.26760563380282"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="58t-0E-1s7">
@@ -208,7 +255,7 @@
         <segue reference="syy-4O-y77"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="folder.badge.plus" catalog="system" width="128" height="93"/>
+        <image name="bos" width="225" height="225"/>
         <image name="gear" catalog="system" width="128" height="122"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
         <image name="plus.rectangle.on.folder" catalog="system" width="128" height="95"/>

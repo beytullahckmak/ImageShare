@@ -28,13 +28,11 @@ class ViewController: UIViewController {
                 }else{
                     self.performSegue(withIdentifier: "toTabBarController", sender: nil)
                 }
-                                
             }
         }
         else{
             hata(baslik: "Kayıt Olunamadı!!", mesaj: "E-posta veya şifre boş geçilemez!")
         }
-        
     }
     @IBAction func login(_ sender: Any) {
         if textEmail.text != "" && textPassword.text != ""{

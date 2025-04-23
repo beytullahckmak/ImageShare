@@ -7,6 +7,8 @@
 
 import UIKit
 import FirebaseStorage
+import FirebaseFirestore
+import FirebaseAuth
 
 class AddViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
@@ -52,8 +54,20 @@ class AddViewController: UIViewController,UIImagePickerControllerDelegate,UINavi
                         if error == nil{
                             let imageUrl = Url?.absoluteString
                             
-                            if let imageUrl = imageUrl{ //Opsiyonelliği kaldırdım.
-                                print(imageUrl)
+                            if let imageUrl = imageUrl{ //Opsiyonelliği
+                                let firestoreDatabase = Firestore.firestore()
+                                firestoreDatabase.collection("Post")
+                                let firestorePost = ["gorselURL" : imageUrl,"yorum" : self.textDetails.text!,"email":Auth.auth().currentUser!.email!,"tarih" : FieldValue.serverTimestamp()] as [String:Any]
+                                firestoreDatabase.collection("Post").addDocument(data: firestorePost){ (error) in
+                                    if error != nil{
+                                        print(error?.localizedDescription ?? "HATA")
+                                    }
+                                    else{
+                                        self.Image.image=UIImage(named: "bos")
+                                        self.textDetails.text = ""
+                                        self.tabBarController?.selectedIndex = 0
+                                    }
+                                }
                             }
                                 
                         }
