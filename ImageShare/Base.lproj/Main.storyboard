@@ -195,8 +195,8 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2nU-mO-qnt">
                                                     <rect key="frame" x="20" y="42" width="353" height="138"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="353" id="nhu-Rh-skz"/>
-                                                        <constraint firstAttribute="height" constant="138" id="xpm-v7-ktq"/>
+                                                        <constraint firstAttribute="height" constant="138" id="I2I-g6-fhS"/>
+                                                        <constraint firstAttribute="width" constant="353" id="ffM-AH-nQD"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yorum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBU-CO-3Qa">
@@ -210,16 +210,20 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="2nU-mO-qnt" firstAttribute="top" secondItem="EAp-Mg-8c7" secondAttribute="bottom" constant="2" id="4xO-n7-1Pz"/>
                                                 <constraint firstItem="EAp-Mg-8c7" firstAttribute="leading" secondItem="2nU-mO-qnt" secondAttribute="leading" id="5hM-Ih-Y22"/>
                                                 <constraint firstItem="2nU-mO-qnt" firstAttribute="leading" secondItem="ZBU-CO-3Qa" secondAttribute="leading" id="6iB-RW-mKf"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="ZBU-CO-3Qa" secondAttribute="bottom" constant="-11" id="BBO-T5-NPF"/>
+                                                <constraint firstItem="2nU-mO-qnt" firstAttribute="leading" secondItem="cuK-D6-JBJ" secondAttribute="leadingMargin" id="CHg-h5-IWe"/>
                                                 <constraint firstItem="EAp-Mg-8c7" firstAttribute="trailing" secondItem="cuK-D6-JBJ" secondAttribute="trailingMargin" id="GWn-5f-pIz"/>
+                                                <constraint firstItem="ZBU-CO-3Qa" firstAttribute="top" secondItem="2nU-mO-qnt" secondAttribute="bottom" constant="23" id="GmL-Ah-Yay"/>
                                                 <constraint firstItem="2nU-mO-qnt" firstAttribute="trailing" secondItem="ZBU-CO-3Qa" secondAttribute="trailing" id="HEm-f8-OPA"/>
                                                 <constraint firstItem="2nU-mO-qnt" firstAttribute="top" secondItem="EAp-Mg-8c7" secondAttribute="bottom" constant="2" id="TnI-mp-HRK"/>
                                                 <constraint firstItem="EAp-Mg-8c7" firstAttribute="trailing" secondItem="2nU-mO-qnt" secondAttribute="trailing" id="X81-7C-Lke"/>
                                                 <constraint firstItem="ZBU-CO-3Qa" firstAttribute="top" secondItem="2nU-mO-qnt" secondAttribute="bottom" constant="23" id="j5D-6K-8Sc"/>
                                                 <constraint firstItem="EAp-Mg-8c7" firstAttribute="leading" secondItem="cuK-D6-JBJ" secondAttribute="leadingMargin" id="kup-gc-zMu"/>
                                                 <constraint firstItem="EAp-Mg-8c7" firstAttribute="top" secondItem="cuK-D6-JBJ" secondAttribute="topMargin" constant="8" id="t3r-Nt-G2p"/>
+                                                <constraint firstItem="2nU-mO-qnt" firstAttribute="trailing" secondItem="cuK-D6-JBJ" secondAttribute="trailingMargin" id="x0I-U5-xNK"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
